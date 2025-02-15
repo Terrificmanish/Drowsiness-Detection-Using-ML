@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drowsiness Detection</title>
+    <meta name="description" content="Drowsiness Detection System">
+    <meta name="author" content="Your Name">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="left-panel">
+                <h1>Drowsiness Detection System</h1>
+                <div class="controls">
+                    <div class="button" onclick="startDetection()">
+                        <p class="btnText">Start Detection</p>
+                        <div class="btnTwo">
+                            <p class="btnText2">GO!</p>
+                        </div>
+                    </div>
+                    <div class="button" onclick="stopDetection()">
+                        <p class="btnText">Stop Detection</p>
+                        <div class="btnTwo">
+                            <p class="btnText2">Ⅹ</p>
+                        </div>
+                    </div>
+                    <div class="button" onclick="startCalibration()">
+                        <p class="btnText">Start Calibration</p>
+                        <div class="btnTwo">
+                            <p class="btnText2">🔍</p>
+                        </div>
+                    </div>
+                    <div id="prediction"></div>
+                </div>
+            </div>
+            <div class="video-container">
+                <video id="videoElement" autoplay></video>
+            </div>
+        </div>
+    </div>
+    <audio id="alertSound" src="{{ url_for('static', filename='alert.mp3') }}"></audio>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
